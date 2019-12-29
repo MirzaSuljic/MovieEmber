@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route';
-import { capitalize as capitalizeWords } from 'movie-ember/helpers/capitalize';
+import { capitalize as capitalizeWords } from '.../helpers/capitalize';
 import { action } from '@ember/object';
 
 export default class Movies extends Route{

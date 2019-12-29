@@ -2,7 +2,7 @@ import Controller from '@ember/controller';
 import { empty, sort } from '@ember/object/computed';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
-import { capitalize } from 'movie-ember/helpers/capitalize';
+import { capitalize } from '.../helpers/capitalize';
 
 export default class Movies extends  Controller {
   @tracked queryParams= {
