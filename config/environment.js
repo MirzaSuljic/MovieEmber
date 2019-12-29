@@ -5,6 +5,9 @@ module.exports = function(environment) {
     modulePrefix: 'movie-ember',
     environment,
     rootURL: '/',
+    'ember-simple-auth': {
+      routeIfAlreadyAuthenticated: 'genres'
+    },
     
     locationType: 'auto',
     EmberENV: {
@@ -17,9 +20,6 @@ module.exports = function(environment) {
         Date: false
       }
     },
-    'ember-simple-auth': {
-      routeIfAlreadyAuthenticated: 'genres'
-      },
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
