@@ -1,5 +1,5 @@
 {{#each @stars as |star|}}
-  <a href="#" {{on "click" (fn this.star.rating "setRating") }} data-test-rr={{concat "star-rating-" star.rating}}>
+  <a href="#" {{on "click" (fn this.star.rating "setRating") }} data-test-rr={{concat  "star-rating-"  this.star.rating}}>
     {{#if @star.isFull}}
       {{fa-icon 'star'}}
     {{else}}

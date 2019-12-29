@@ -8,7 +8,7 @@ export default class Genres extends Controller{
   @tracked isAddingGenre= false
   @tracked newGenreName= ''
 
-  isAddButtonDisabled= empty('newGenreName')
+  @tracked isAddButtonDisabled= empty('newGenreName')
 
   @action
     addGenre() {

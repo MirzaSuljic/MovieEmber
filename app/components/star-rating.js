@@ -9,7 +9,7 @@ export default class StarRating extends Component{
   @tracked maxRating = 5
   @tracked onClick() {}
 
-  get stars()   /*: computed('rating', 'maxRating', function()*/ {
+  get stars()   {
     let stars = [];
     for (let i = 1; i <= this.maxRating; i++) {
       stars.push({ rating: i, isFull: this.rating >= i });

@@ -17,7 +17,7 @@ export default class Movies extends  Controller {
 
   @tracked isAddButtonDisabled= empty('newMovieTitle')
 
-  get sortProperties() /*:computed('sortBy', function()*/ {
+  get sortProperties()  {
     let options = {
       ratingDesc: ['rating:desc', 'title:asc'],
       ratingAsc: ['rating:asc', 'title:asc'],
@@ -30,13 +30,13 @@ export default class Movies extends  Controller {
   
   @tracked sortedMovies = sort('matchingMovies', 'sortProperties')
 
-  get matchingMovies()  /*: computed('model.movies.@each.title', 'searchTerm', function() */{
+  get matchingMovies()  {
     let searchTerm = this.searchTerm.toLowerCase();
 
     return this.model.get('movies').filter(movie => movie.title.toLowerCase().includes(searchTerm));
   }
 
-  get newMoviePlaceholder() /*: computed('model.name', function()*/ {
+  get newMoviePlaceholder() {
     return `New ${capitalize(this.model.name)} movie`;
   }
 
