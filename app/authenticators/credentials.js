@@ -1,8 +1,8 @@
 import Base from 'ember-simple-auth/authenticators/base';
 import { inject as service } from '@ember/service';
 
-export default Base.extend({
-  ajax: service(),
+export default class Credentials extends Base{
+ @service ajax;
 
   async authenticate(username, password) {
     let response =  await this.ajax.post('/token', {
@@ -15,12 +15,12 @@ export default Base.extend({
     
     let { user_email: userEmail, token } = response;
     return { userEmail, token };
-  },
+  }
 
   async restore(data) {
     return data;
   }
-});
+}
 
 
 // import OAuth2PasswordGrant from 'ember-simple-auth/authenticators/oauth2-password-grant';

@@ -1,11 +1,12 @@
 import Route from '@ember/routing/route';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
+import { inject as service } from '@ember/service';
 
 export default Route.extend(AuthenticatedRouteMixin, {
-  async model() {
+  session: service(),
+   model() {
     return this.store.findAll('genre');
   },
-
   actions: {
     didTransition() {
       document.title = 'Genres - Movie List';

@@ -1,6 +1,23 @@
 import DS from 'ember-data';
 import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
 import { inject as service } from '@ember/service';
+// import { env } from 'ember-cli/lib/broccoli/ember-app';
+
+
+// let options = {
+//   session: service(),
+
+//   authorize(xhr) {
+//     let { token } = this.session.data.authenticated;
+//     xhr.setRequestHeader('Authorization', `Bearer ${token}`);
+//   }
+// };
+
+// // if(env.apiHost){
+// //   options.host = ENV.apiHost;
+// // }
+
+//export default DS.JSONAPIAdapter.extend(DataAdapterMixin, options);
 
 export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
   session: service(),
@@ -11,12 +28,4 @@ export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
   }    
 });
 
-// import JSONAPIAdapter from 'ember-data/adapters/json-api';
-// import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
-// import config from 'my-app/config/environment';
 
-// export default JSONAPIAdapter.extend(DataAdapterMixin, {
-//   host: config.apiUrl,
-//   namespace: config.apiNamespace,
-//   authorizer: 'authorizer:application'
-// });
