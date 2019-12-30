@@ -6,7 +6,9 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     'ember-simple-auth': {
-      routeIfAlreadyAuthenticated: 'genres'
+      routeIfAlreadyAuthenticated: 'genres',
+      // apiNamespace: 'api',
+      // apiUrl: null
     },
     
     locationType: 'auto',

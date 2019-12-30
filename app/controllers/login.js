@@ -9,10 +9,18 @@ export default class Login extends Controller {
   @action
     async signIn(event) {
       event.preventDefault();
-      
-      let { email, password } = this;
-      await this.session.authenticate('authenticator:credentials', email, password);
+      let attrs = { email, password };
+      let user = this.store.createRecord('user', attrs);
+      await user.save();
+      //let session = this.get('session');
+      await session.authenticate('authenticator:credentials', email, password);
       this.transitionToRoute('genres');
+      
+      // let { email, password } = this;
+      // console.log("Submit");
+      // await this.session.authenticate('authenticator:credentials', email, password);
+      // this.transitionToRoute('genres');
     }
+
   }
 
