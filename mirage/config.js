@@ -8,6 +8,7 @@ export default function() {
     return schema.genres.all();
   });
 
+  this.get('/genres');
   this.post('/genres');
   this.get('/genres/:id');
 
@@ -29,4 +30,18 @@ export default function() {
       }
     }
   });
+
+  // this.post('/token', function(req, res) {
+  //   if(req.body.grant_type === 'password'){
+  //     if(req.body.email ==='test@test.com' && req.body.password === 'test123'){
+  //       res.status(200).send('{"access_token": "secret token"}');
+  //     }else {
+  //       res.status(400).send('{"error": "invalid_grant"}');
+  //     }
+  //   }else {
+  //     res.status(400).send('{"error": "unsupported_grant_type"}');
+
+  //   }
+
+  // });
 }

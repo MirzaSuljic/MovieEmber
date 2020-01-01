@@ -2,8 +2,8 @@
   <ul class="rr-list">
     {{#each @model as |genre|}}
       <li class="rr-list-item" data-test-rr="genre-list-item">
-        <LinkTo @route="genres.genre" genre.id class="rr-genre-link" data-test-rr="genre-link">
-          {{capitalize genre.name}}
+        <LinkTo @route="genres.genre" genre.id  class="rr-genre-link" data-test-rr="genre-link">
+          {{capitalize this.genre.name}}
           <span class="rr-pointer">{{fa-icon "angle-right"}}</span>
       </LinkTo>
       </li>

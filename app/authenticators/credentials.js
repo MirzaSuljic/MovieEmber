@@ -1,11 +1,11 @@
 import Base from 'ember-simple-auth/authenticators/base';
-import { inject as service } from '@ember/service';
+// import { inject as service } from '@ember/service';
 
 export default class Credentials extends Base{
- @service ajax;
-
+  
   async authenticate(username, password) {
-    let response =  await this.ajax.post('/token', {
+    let response = fetch('/token', {
+      method: "post",
       headers: {
         'Accept': 'application/vnd.api+json',
         'Content-Type': 'application/vnd.api+json'
@@ -22,14 +22,3 @@ export default class Credentials extends Base{
   }
 }
 
-
-// import OAuth2PasswordGrant from 'ember-simple-auth/authenticators/oauth2-password-grant';
-// import config from 'my-app/config/environment';
-
-// const host = config.apiUrl || '';
-// const namespace = config.apiNamespace;
-// const serverTokenEndpoint = [ host, namespace, 'token' ];
-
-// export default OAuth2PasswordGrant.extend({
-//   serverTokenEndpoint: serverTokenEndpoint.join('/')
-// });

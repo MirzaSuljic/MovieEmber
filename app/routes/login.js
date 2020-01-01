@@ -4,6 +4,6 @@ import UnauthenticatedRouteMixin from 'ember-simple-auth/mixins/unauthenticated-
 
 export default Route.extend(UnauthenticatedRouteMixin, {
   resetController(controller) {
-    controller.setProperties({ email: null, password: null });
+    controller.setProperties({ email: "test@test.com", password: "test123" });
   }
 });
