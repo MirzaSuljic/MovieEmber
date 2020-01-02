@@ -8,7 +8,6 @@ export default function() {
     return schema.genres.all();
   });
 
-  this.get('/genres');
   this.post('/genres');
   this.get('/genres/:id');
 
