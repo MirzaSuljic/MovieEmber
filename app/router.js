@@ -15,7 +15,6 @@ Router.map(function() {
     });
   // });
   this.route('login');
-    this.route('posts');
     // all routes that require the session to be authenticated
 });
 
